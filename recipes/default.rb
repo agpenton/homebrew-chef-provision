@@ -23,11 +23,25 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+user = `whoami`
+group = 'staff'
+
+homebrew_tap 'homebrew/core' do
+  action :tap
+  ignore_failure true
+end
+
+homebrew_tap 'homebrew/cask' do
+  action :tap
+  ignore_failure true
+end
+
 %w(autoconf bash-completion doxygen gettext git iperf sqlite nmap ssh-copy-id pv\
    wget wrk httpie zsh-completions mackup mas python awscli packer\
    packer-completion neofetch ruby).each do |b|
      homebrew_package b do
        action :install
+       ignore_failure true
      end
    end
 
@@ -35,10 +49,6 @@
   skype slack vagrant terraform macvim visual-studio-code jetbrains-toolbox).each do |c|
   homebrew_cask c do
     action :install
+    ignore_failure true
   end
-end
-
-homebrew_update 'all platforms' do
-  frequency 86400
-  action :periodic
 end
