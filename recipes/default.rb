@@ -29,12 +29,14 @@
      homebrew_package b do
        action :install
      end
+   end
 
 %w(dropbox the-unarchiver iterm2 spotify transmission firefox docker virtualbox\
   skype slack vagrant terraform macvim visual-studio-code jetbrains-toolbox).each do |c|
   homebrew_cask c do
     action :install
   end
+end
 
 homebrew_update 'all platforms' do
   frequency 86400
