@@ -49,3 +49,16 @@ end
     ignore_failure :quiet
   end
 end
+
+directory "/Users/#{user}/Library/Caches/Homebrew" do
+  owner "#{user}"
+  group "#{group}"
+  mode '0775'
+  action :delete
+end
+directory "/Users/#{user}/Library/Caches/Homebrew" do
+  owner "#{user}"
+  group "#{group}"
+  mode '0775'
+  action :create
+end
