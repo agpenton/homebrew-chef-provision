@@ -28,24 +28,24 @@ group = 'staff'
 
 homebrew_tap 'homebrew/core' do
   action :tap
-  ignore_failure true
+  ignore_failure :quiet
 end
 
 homebrew_tap 'homebrew/cask' do
   action :tap
-  ignore_failure true
+  ignore_failure :quiet
 end
 
 %w(autoconf bash-completion doxygen gettext git iperf sqlite nmap ssh-copy-id pv wget wrk httpie zsh-completions mackup mas python awscli packer packer-completion neofetch ruby).each do |b|
      homebrew_package b do
        action :install
-       ignore_failure true
+       ignore_failure :quiet
      end
    end
 
 %w(dropbox the-unarchiver iterm2 spotify transmission firefox docker virtualbox skype slack vagrant terraform macvim visual-studio-code jetbrains-toolbox).each do |c|
   homebrew_cask c do
     action :install
-    ignore_failure true
+    ignore_failure :quiet
   end
 end
