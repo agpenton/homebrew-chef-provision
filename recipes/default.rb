@@ -23,8 +23,10 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-user = `id -u $(whoami)`
-group = 'id -g $(whoami)'
+user = `whoami`
+group = 'staff'
+u_id = `id -u $(whoami)`
+g_uid = 'id -g $(whoami)'
 
 homebrew_tap 'homebrew/core' do
   action :tap
@@ -51,14 +53,14 @@ end
 end
 
 directory "/Users/#{user}/Library/Caches/Homebrew" do
-  owner "#{user}"
-  group "#{group}"
+  owner "#{u_id}"
+  group "#{g_uid}"
   mode '0775'
   action :delete
 end
 directory "/Users/#{user}/Library/Caches/Homebrew" do
-  owner "#{user}"
-  group "#{group}"
+  owner "#{u_id}"
+  group "#{g_uid}"
   mode '0775'
   action :create
 end
