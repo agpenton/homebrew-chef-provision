@@ -38,14 +38,52 @@ homebrew_tap 'homebrew/cask' do
   ignore_failure :quiet
 end
 
-%w(autoconf bash-completion doxygen gettext git iperf sqlite nmap ssh-copy-id pv wget wrk httpie zsh-completions mackup mas python awscli packer packer-completion neofetch ruby).each do |b|
+%w(
+  autoconf
+  bash-completion
+  doxygen
+  gettext
+  git
+  iperf
+  sqlite
+  nmap
+  ssh-copy-id
+  pv
+  wget
+  wrk
+  httpie
+  zsh-completions
+  mackup
+  mas
+  python
+  awscli
+  packer
+  packer-completion
+  neofetch
+  ruby
+).each do |b|
      homebrew_package b do
        action :install
        ignore_failure :quiet
      end
    end
 
-%w(dropbox the-unarchiver iterm2 spotify transmission firefox docker virtualbox skype slack vagrant terraform macvim visual-studio-code jetbrains-toolbox).each do |c|
+%w(dropbox
+  the-unarchiver
+  iterm2
+  spotify
+  transmission
+  firefox
+  docker
+  virtualbox
+  skype
+  slack
+  vagrant
+  terraform
+  macvim
+  visual-studio-code
+  jetbrains-toolbox
+).each do |c|
   homebrew_cask c do
     action :install
     ignore_failure :quiet
@@ -57,10 +95,20 @@ directory "/Users/#{user}/Library/Caches/Homebrew" do
   group "#{group}"
   mode '0775'
   action :delete
+  only_if { ::Dir.exist?("/Users/#{user}/Library/Caches/Homebrew") }
 end
+
 directory "/Users/#{user}/Library/Caches/Homebrew" do
   owner "#{user}"
   group "#{group}"
   mode '0775'
   action :create
+  not_if { ::Dir.exist?("/Users/#{user}/Library/Caches/Homebrew") }
+end
+directory "/Users/#{user}/Library/Caches/Homebrew/downloads" do
+  owner "#{user}"
+  group "#{group}"
+  mode '0775'
+  action :create
+  not_if { ::Dir.exist?("/Users/#{user}/Library/Caches/Homebrew/downloads") }
 end
