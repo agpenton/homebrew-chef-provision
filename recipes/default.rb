@@ -1,5 +1,5 @@
 #
-# Cookbook:: base
+# Cookbook:: homebrew
 # Recipe:: default
 #
 # The MIT License (MIT)
@@ -61,6 +61,9 @@ end
   packer-completion
   neofetch
   ruby
+  mc
+  htop
+
 ).each do |b|
      homebrew_package b do
        action :install

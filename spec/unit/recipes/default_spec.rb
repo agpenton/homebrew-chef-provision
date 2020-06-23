@@ -1,5 +1,5 @@
 #
-# Cookbook:: base
+# Cookbook:: homebrew
 # Spec:: default
 #
 # The MIT License (MIT)
@@ -26,7 +26,7 @@
 
 require 'spec_helper'
 
-describe 'base::default' do
+describe 'homebrew::default' do
   context 'When all attributes are default, on Ubuntu 20.04' do
     # for a complete list of available platforms and versions see:
     # https://github.com/chefspec/fauxhai/blob/master/PLATFORMS.md
