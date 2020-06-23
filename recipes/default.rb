@@ -53,14 +53,14 @@ end
 end
 
 directory "/Users/#{user}/Library/Caches/Homebrew" do
-  owner "#{u_id}"
-  group "#{g_uid}"
+  owner "#{user}"
+  group "#{group}"
   mode '0775'
   action :delete
 end
 directory "/Users/#{user}/Library/Caches/Homebrew" do
-  owner "#{u_id}"
-  group "#{g_uid}"
+  owner "#{user}"
+  group "#{group}"
   mode '0775'
   action :create
 end
