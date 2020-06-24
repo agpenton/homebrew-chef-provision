@@ -23,7 +23,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-user = `whoami`
+user = (`whoami`).strip
 group = 'staff'
 u_id = `id -u $(whoami)`
 g_uid = 'id -g $(whoami)'
@@ -63,6 +63,7 @@ end
   ruby
   mc
   htop
+  zsh-history-substring-search
 
 ).each do |b|
      homebrew_package b do
@@ -98,6 +99,7 @@ directory "/Users/#{user}/Library/Caches/Homebrew" do
   group "#{group}"
   mode '0775'
   action :delete
+  recursive true
   only_if { ::Dir.exist?("/Users/#{user}/Library/Caches/Homebrew") }
 end
 
