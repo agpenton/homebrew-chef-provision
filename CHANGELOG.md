@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.1.1](https://github.com/agpenton/homebrew-chef-provision/tree/v0.1.1) (2020-06-24)
+
+[Full Changelog](https://github.com/agpenton/homebrew-chef-provision/compare/0.1.0a...v0.1.1)
+
 ## [0.1.0a](https://github.com/agpenton/homebrew-chef-provision/tree/0.1.0a) (2020-06-23)
 
 [Full Changelog](https://github.com/agpenton/homebrew-chef-provision/compare/0.1.0...0.1.0a)
