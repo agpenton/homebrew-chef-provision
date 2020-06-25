@@ -24,16 +24,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 user = (`whoami`).strip
-group = 'staff'
-u_id = `id -u $(whoami)`
-g_uid = 'id -g $(whoami)'
+group = "staff"
 
-homebrew_tap 'homebrew/core' do
+homebrew_tap "homebrew/core" do
   action :tap
   ignore_failure :quiet
 end
 
-homebrew_tap 'homebrew/cask' do
+homebrew_tap "homebrew/cask" do
   action :tap
   ignore_failure :quiet
 end
@@ -64,7 +62,8 @@ end
   mc
   htop
   zsh-history-substring-search
-
+  kubectl
+  stern
 ).each do |b|
      homebrew_package b do
        action :install
@@ -87,6 +86,9 @@ end
   macvim
   visual-studio-code
   jetbrains-toolbox
+  whatsapp
+  viber
+  kindle
 ).each do |c|
   homebrew_cask c do
     action :install
@@ -97,7 +99,7 @@ end
 directory "/Users/#{user}/Library/Caches/Homebrew" do
   owner "#{user}"
   group "#{group}"
-  mode '0775'
+  mode "0775"
   action :delete
   recursive true
   only_if { ::Dir.exist?("/Users/#{user}/Library/Caches/Homebrew") }
@@ -106,14 +108,14 @@ end
 directory "/Users/#{user}/Library/Caches/Homebrew" do
   owner "#{user}"
   group "#{group}"
-  mode '0775'
+  mode "0775"
   action :create
   not_if { ::Dir.exist?("/Users/#{user}/Library/Caches/Homebrew") }
 end
 directory "/Users/#{user}/Library/Caches/Homebrew/downloads" do
   owner "#{user}"
   group "#{group}"
-  mode '0775'
+  mode "0775"
   action :create
   not_if { ::Dir.exist?("/Users/#{user}/Library/Caches/Homebrew/downloads") }
 end
