@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem 'highline', '~> 2.0', '>= 2.0.3'
+gem 'highline', '~> 3.0', '>= 3.1.2'
 gem 'chefspec', '~> 9.2'
 gem 'inspec', '~> 4.20', '>= 4.20.10'
 gem 'rack', '~> 2.2', '>= 2.2.3'
