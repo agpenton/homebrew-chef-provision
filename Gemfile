@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gem 'highline', '~> 2.0', '>= 2.0.3'
 gem 'chefspec', '~> 9.2'
-gem 'inspec', '~> 4.20', '>= 4.20.10'
+gem 'inspec', '~> 6.0', '>= 6.8.24'
 gem 'rack', '~> 2.2', '>= 2.2.3'
 gem 'rake', '~> 13.0', '>= 13.0.1'
 gem 'rspec', '~> 3.9'
