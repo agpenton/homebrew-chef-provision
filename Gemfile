@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gem 'highline', '~> 3.0', '>= 3.1.2'
 gem 'chefspec', '~> 9.2'
 gem 'inspec', '~> 7.0', '>= 7.0.95'
-gem 'rack', '~> 2.2', '>= 2.2.3'
+gem 'rack', '~> 3.0', '>= 3.2.4'
 gem 'rake', '~> 13.0', '>= 13.0.1'
 gem 'rspec', '~> 3.9'
 gem 'rubocop', '~> 0.93.0'
