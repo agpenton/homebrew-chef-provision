@@ -17,6 +17,6 @@ end
 
 group :test do
   gem 'kitchen-vagrant', '~> 2.0', '>= 2.2.0'
-  gem 'test-kitchen', '~> 3.0', '>= 3.9.1'
+  gem 'test-kitchen', '~> 4.0', '>= 4.0.0'
   gem 'kitchen-inspec', '~> 3.0'
 end
