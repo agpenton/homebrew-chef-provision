@@ -8,7 +8,7 @@ gem 'inspec', '~> 7.0', '>= 7.0.95'
 gem 'rack', '~> 3.0', '>= 3.2.4'
 gem 'rake', '~> 13.0', '>= 13.0.1'
 gem 'rspec', '~> 3.9'
-gem 'rubocop', '~> 1.82.0'
+gem 'rubocop', '~> 1.84.0'
 
 group :tools do
   gem 'github_changelog_generator', '~> 1.15', '>= 1.15.2'
